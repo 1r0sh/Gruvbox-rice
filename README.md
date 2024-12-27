@@ -2,6 +2,7 @@
 mac os monochrome rice 
 
 # Screenshots
-<img width="1680" alt="Screenshot 1403-10-02 at 3 54 52 PM" src="https://github.com/1r0sh/Mac-rices/tree/Monochrome/Screenshots/1.png" />
-<img width="1680" alt="Screenshot 1403-10-02 at 3 53 51 PM" src="https://github.com/user-attachments/assets/8c9e3844-1279-4b79-b5e2-7bae57c5463e" />
-<img width="1680" alt="Screenshot 1403-10-02 at 3 53 45 PM" src="https://github.com/user-attachments/assets/a805cd22-75d9-4fb1-96cc-9f903e42167d" />
+
+![1](https://github.com/user-attachments/assets/19fc973f-a1fa-4375-9f45-68ed3904e86e)
+![2](https://github.com/user-attachments/assets/41d315ad-da95-4e70-8f0c-e1568107fc16)
+![3](https://github.com/user-attachments/assets/bde57815-ce4e-4f66-a346-083f362535f9)
