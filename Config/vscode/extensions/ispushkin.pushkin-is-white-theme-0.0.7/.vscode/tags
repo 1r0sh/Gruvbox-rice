@@ -1,0 +1,19 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Plugin	../examples/plugins_manager.py	/^from gixy.plugins.plugin import Plugin$/;"	kind:namespace	line:4
+PluginsManager	../examples/plugins_manager.py	/^class PluginsManager(object):$/;"	kind:class	line:7
+__init__	../examples/plugins_manager.py	/^    def __init__(self, config=None):$/;"	kind:member	line:8
+audit	../examples/plugins_manager.py	/^    def audit(self, directive):$/;"	kind:member	line:62
+get_plugins_descriptions	../examples/plugins_manager.py	/^    def get_plugins_descriptions(self):$/;"	kind:member	line:59
+gixy	../examples/plugins_manager.py	/^import gixy$/;"	kind:namespace	line:3
+import_plugins	../examples/plugins_manager.py	/^    def import_plugins(self):$/;"	kind:member	line:13
+init_plugins	../examples/plugins_manager.py	/^    def init_plugins(self):$/;"	kind:member	line:25
+issues	../examples/plugins_manager.py	/^    def issues(self):$/;"	kind:member	line:68
+os	../examples/plugins_manager.py	/^import os$/;"	kind:namespace	line:1
+plugins	../examples/plugins_manager.py	/^    def plugins(self):$/;"	kind:member	line:49
+plugins_classes	../examples/plugins_manager.py	/^    def plugins_classes(self):$/;"	kind:member	line:55
+plugins_manager.py	../examples/plugins_manager.py	1;"	kind:file	line:1

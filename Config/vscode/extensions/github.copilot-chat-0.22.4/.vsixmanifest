@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+		<Metadata>
+			<Identity Language="en-US" Id="copilot-chat" Version="0.22.4" Publisher="GitHub" />
+			<DisplayName>GitHub Copilot Chat</DisplayName>
+			<Description xml:space="preserve">AI chat features powered by Copilot</Description>
+			<Tags>ai,openai,codex,pilot,snippets,documentation,autocomplete,intellisense,refactor,javascript,python,typescript,php,go,golang,ruby,c++,c#,java,kotlin,co-pilot,keybindings,chat-participant,github-copilot,ignore,markdown,__ext_copilotmd</Tags>
+			<Categories>AI,Chat,Programming Languages,Machine Learning</Categories>
+			<GalleryFlags>Public</GalleryFlags>
+			<Badges><Badge Link="https://github.com/github-copilot/signup?editor=vscode" ImgUri="https://img.shields.io/badge/GitHub%20Copilot-Subscription%20Required-orange" Description="Sign up for GitHub Copilot" />
+<Badge Link="https://github.com/github/copilot-docs" ImgUri="https://img.shields.io/github/stars/github/copilot-docs?style=social" Description="Star Copilot on GitHub" />
+<Badge Link="https://www.youtube.com/@GitHub/search?query=copilot" ImgUri="https://img.shields.io/youtube/channel/views/UC7c3Kb6jYCRj4JOHHZTxKsQ?style=social" Description="Check out GitHub on Youtube" />
+<Badge Link="https://twitter.com/github" ImgUri="https://img.shields.io/twitter/follow/github?style=social" Description="Follow GitHub on Twitter" /></Badges>
+			<Properties>
+				<Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.95.0-20241022" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="GitHub.copilot" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionKind" Value="workspace" />
+				<Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.EnabledApiProposals" Value="extensionsAny,newSymbolNamesProvider,interactive,codeActionAI,activeComment,commentReveal,contribCommentThreadAdditionalMenu,contribCommentsViewThreadMenus,documentFiltersExclusive,embeddings,findTextInFiles,findFiles2,textSearchProvider,terminalDataWriteEvent,terminalExecuteCommandEvent,terminalSelection,terminalQuickFixProvider,mappedEditsProvider,aiRelatedInformation,chatParticipantAdditions,defaultChatParticipant@2,chatVariableResolver,contribSourceControlInputBoxMenu,authLearnMore,testObserver,aiTextSearchProvider,chatParticipantPrivate@2,chatProvider,contribDebugCreateConfiguration,inlineEdit" />
+				
+				<Property Id="Microsoft.VisualStudio.Code.ExecutesCode" Value="true" />
+				
+				<Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/microsoft/vscode-copilot-release.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/microsoft/vscode-copilot-release.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/microsoft/vscode-copilot-release.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://aka.ms/microsoft/vscode-copilot-release" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/features/copilot?editor=vscode" />
+				
+				
+				<Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
+				<Property Id="Microsoft.VisualStudio.Services.Content.Pricing" Value="Trial"/>
+
+				
+				<Property Id="Microsoft.VisualStudio.Services.CustomerQnALink" Value="https://github.com/github-community/community/discussions/categories/copilot" />
+			</Properties>
+			<License>extension/LICENSE.txt</License>
+			<Icon>extension/assets/Copilot-App-Icon.png</Icon>
+		</Metadata>
+		<Installation>
+			<InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+		</Installation>
+		<Dependencies/>
+		<Assets>
+			<Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+			<Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/readme.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/changelog.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.txt" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/assets/Copilot-App-Icon.png" Addressable="true" />
+		</Assets>
+	</PackageManifest>

@@ -1,0 +1,504 @@
+{
+	"name": "copilot",
+	"displayName": "GitHub Copilot",
+	"description": "Your AI pair programmer",
+	"version": "1.250.0",
+	"build": "1258",
+	"buildType": "prod",
+	"publisher": "GitHub",
+	"preview": false,
+	"homepage": "https://github.com/features/copilot?editor=vscode",
+	"license": "https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features",
+	"bugs": {
+		"url": "https://github.com/community/community/discussions/categories/copilot"
+	},
+	"qna": "https://github.com/github-community/community/discussions/categories/copilot",
+	"icon": "assets/Copilot-App-Icon.png",
+	"pricing": "Trial",
+	"extensionPack": [
+		"GitHub.copilot-chat"
+	],
+	"engines": {
+		"vscode": "^1.82.0",
+		"node": ">=18.0.0",
+		"npm": ">=9.0.0"
+	},
+	"categories": [
+		"AI",
+		"Chat",
+		"Programming Languages",
+		"Machine Learning"
+	],
+	"keywords": [
+		"ai",
+		"openai",
+		"codex",
+		"pilot",
+		"snippets",
+		"documentation",
+		"autocomplete",
+		"intellisense",
+		"refactor",
+		"javascript",
+		"python",
+		"typescript",
+		"php",
+		"go",
+		"golang",
+		"ruby",
+		"c++",
+		"c#",
+		"java",
+		"kotlin",
+		"co-pilot"
+	],
+	"badges": [
+		{
+			"url": "https://img.shields.io/badge/GitHub%20Copilot-Subscription%20Required-orange",
+			"href": "https://github.com/github-copilot/signup?editor=vscode",
+			"description": "Sign up for GitHub Copilot"
+		},
+		{
+			"url": "https://img.shields.io/github/stars/github/copilot-docs?style=social",
+			"href": "https://github.com/github/copilot-docs",
+			"description": "Star Copilot on GitHub"
+		},
+		{
+			"url": "https://img.shields.io/youtube/channel/views/UC7c3Kb6jYCRj4JOHHZTxKsQ?style=social",
+			"href": "https://www.youtube.com/@GitHub/search?query=copilot",
+			"description": "Check out GitHub on Youtube"
+		},
+		{
+			"url": "https://img.shields.io/twitter/follow/github?style=social",
+			"href": "https://twitter.com/github",
+			"description": "Follow GitHub on Twitter"
+		}
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./dist/extension",
+	"enabledApiProposals": [
+		"inlineCompletionsAdditions"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "github.copilot.acceptCursorPanelSolution",
+				"title": "Accept panel suggestion at the cursor",
+				"category": "GitHub Copilot"
+			},
+			{
+				"command": "github.copilot.signIn",
+				"title": "Sign In",
+				"category": "GitHub Copilot",
+				"enablement": "!github.copilot.activated"
+			},
+			{
+				"command": "github.copilot.previousPanelSolution",
+				"title": "Navigate to the previous panel suggestion",
+				"category": "GitHub Copilot"
+			},
+			{
+				"command": "github.copilot.nextPanelSolution",
+				"title": "Navigate to the next panel suggestion",
+				"category": "GitHub Copilot"
+			},
+			{
+				"command": "github.copilot.generate",
+				"title": "Open Completions Panel",
+				"category": "GitHub Copilot"
+			},
+			{
+				"command": "github.copilot.toggleCopilot",
+				"title": "Enable/Disable Copilot completions",
+				"category": "GitHub Copilot"
+			},
+			{
+				"command": "github.copilot.sendFeedback",
+				"title": "Send Feedback",
+				"category": "GitHub Copilot"
+			},
+			{
+				"command": "github.copilot.collectDiagnostics",
+				"title": "Collect Diagnostics",
+				"category": "GitHub Copilot"
+			},
+			{
+				"command": "github.copilot.openLogs",
+				"title": "Open Logs",
+				"category": "GitHub Copilot"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "github.copilot.generate",
+				"key": "ctrl+enter",
+				"mac": "ctrl+enter",
+				"when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused && !commentEditorFocused"
+			},
+			{
+				"command": "github.copilot.acceptCursorPanelSolution",
+				"key": "ctrl+/",
+				"mac": "ctrl+/",
+				"when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'"
+			},
+			{
+				"command": "github.copilot.previousPanelSolution",
+				"key": "alt+[",
+				"mac": "alt+[",
+				"when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'"
+			},
+			{
+				"command": "github.copilot.nextPanelSolution",
+				"key": "alt+]",
+				"mac": "alt+]",
+				"when": "github.copilot.activated && github.copilot.panelVisible && activeWebviewPanelId == 'GitHub Copilot Suggestions'"
+			},
+			{
+				"command": "editor.action.inlineSuggest.trigger",
+				"key": "alt+\\",
+				"when": "editorTextFocus && !editorHasSelection && config.github.copilot.inlineSuggest.enable && !inlineSuggestionsVisible"
+			}
+		],
+		"menus": {
+			"editor/inlineCompletions/actions": [
+				{
+					"command": "github.copilot.generate",
+					"when": "github.copilot.activated"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "github.copilot.generate",
+					"when": "github.copilot.activated"
+				},
+				{
+					"command": "github.copilot.toggleCopilot",
+					"when": "github.copilot.activated"
+				},
+				{
+					"command": "github.copilot.sendFeedback",
+					"when": "github.copilot.activated"
+				},
+				{
+					"command": "github.copilot.collectDiagnostics"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"title": "GitHub Copilot",
+				"properties": {
+					"github.copilot.advanced": {
+						"type": "object",
+						"title": "Advanced Settings",
+						"properties": {
+							"authProvider": {
+								"type": "string",
+								"enum": [
+									"github",
+									"github-enterprise"
+								],
+								"enumDescriptions": [
+									"GitHub.com",
+									"GitHub Enterprise"
+								],
+								"default": "github",
+								"description": "The GitHub identity to use for Copilot"
+							},
+							"useLanguageServer": {
+								"type": "boolean",
+								"default": false,
+								"description": "Experimental: Use language server"
+							},
+							"debug.overrideEngine": {
+								"type": "string",
+								"default": "",
+								"description": "Override engine name"
+							},
+							"debug.overrideProxyUrl": {
+								"type": "string",
+								"default": "",
+								"description": "Override GitHub authentication proxy full URL"
+							},
+							"debug.testOverrideProxyUrl": {
+								"type": "string",
+								"default": "",
+								"description": "Override GitHub authentication proxy URL when running tests"
+							},
+							"debug.overrideCapiUrl": {
+								"type": "string",
+								"default": "",
+								"description": "Override GitHub Copilot API full URL"
+							},
+							"debug.testOverrideCapiUrl": {
+								"type": "string",
+								"default": "",
+								"description": "Override GitHub Copilot API URL when running tests"
+							},
+							"debug.filterLogCategories": {
+								"type": "array",
+								"default": [],
+								"description": "Show only log categories listed in this setting. If an array is empty, show all loggers"
+							}
+						}
+					},
+					"github.copilot.enable": {
+						"type": "object",
+						"default": {
+							"*": true,
+							"plaintext": false,
+							"markdown": false,
+							"scminput": false
+						},
+						"additionalProperties": {
+							"type": "boolean"
+						},
+						"markdownDescription": "Enable or disable Copilot completions for specified [languages](https://code.visualstudio.com/docs/languages/identifiers)"
+					},
+					"github.copilot.inlineSuggest.enable": {
+						"type": "boolean",
+						"default": true,
+						"deprecationMessage": "Deprecated: Please use github.copilot.editor.enableAutoCompletions instead.",
+						"description": "Show inline suggestions"
+					},
+					"github.copilot.editor.enableAutoCompletions": {
+						"type": "boolean",
+						"scope": "language-overridable",
+						"default": true,
+						"description": "Automatically show inline completions"
+					}
+				}
+			}
+		],
+		"configurationDefaults": {
+			"editor.tokenColorCustomizations": {
+				"[*Light*]": {
+					"textMateRules": [
+						{
+							"scope": "ref.matchtext",
+							"settings": {
+								"foreground": "#000"
+							}
+						}
+					]
+				},
+				"[*Dark*]": {
+					"textMateRules": [
+						{
+							"scope": "ref.matchtext",
+							"settings": {
+								"foreground": "#fff"
+							}
+						}
+					]
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "code-referencing"
+			}
+		],
+		"grammars": [
+			{
+				"language": "code-referencing",
+				"scopeName": "text.ref",
+				"path": "./syntaxes/ref.tmGrammar.json"
+			}
+		],
+		"icons": {
+			"copilot-logo": {
+				"description": "GitHub Copilot icon",
+				"default": {
+					"fontPath": "assets/copilot.woff",
+					"fontCharacter": "\\0041"
+				}
+			},
+			"copilot-warning": {
+				"description": "GitHub Copilot icon",
+				"default": {
+					"fontPath": "assets/copilot.woff",
+					"fontCharacter": "\\0042"
+				}
+			},
+			"copilot-notconnected": {
+				"description": "GitHub Copilot icon",
+				"default": {
+					"fontPath": "assets/copilot.woff",
+					"fontCharacter": "\\0043"
+				}
+			},
+			"copilot-chat": {
+				"description": "GitHub Copilot chat icon",
+				"default": {
+					"fontPath": "assets/copilot.woff",
+					"fontCharacter": "\\F101"
+				}
+			},
+			"copilot-blocked": {
+				"description": "GitHub Copilot blocked icon",
+				"default": {
+					"fontPath": "assets/copilot.woff",
+					"fontCharacter": "\\0045"
+				}
+			}
+		},
+		"iconFonts": [
+			{
+				"id": "copilot-font",
+				"src": [
+					{
+						"path": "assets/copilot.woff",
+						"format": "woff"
+					}
+				]
+			}
+		]
+	},
+	"scripts": {
+		"build": "tsx esbuild.ts",
+		"clean": "./script/build/clean.sh",
+		"compress": "tsx ./script/compressTokenizer.ts",
+		"forbid-sources-content:extension": "node script/forbid-sources-content.js --extension",
+		"generate_languages": "ts-node script/generateLanguages.ts && prettier --write lib/src/language/generatedLanguages.ts",
+		"get_token": "ts-node script/getToken.ts",
+		"lint": "run-p --aggregate-output \"lint:*\"",
+		"lint:deps": "depcruise -c .dependency-cruiser.js .",
+		"lint:eslint": "eslint -f visualstudio --cache .",
+		"lint:prettier": "prettier --check . 2>&1",
+		"lint:types": "tsc --noEmit && tsc --noEmit -p extension/src/copilotPanel/webview",
+		"prebuild": "npm install",
+		"pretest": "npm run build",
+		"pretest:headless": "npm run build",
+		"pretest:extension": "npm run build",
+		"pretest:lsp-client": "npm run build",
+		"pretest:lib-e2e": "npm run build",
+		"prewatch": "npm run build",
+		"start": "npm run watch",
+		"test": "npm-run-all \"test:extension --ignore-scripts\" \"test:headless --ignore-scripts\" lint",
+		"test:headless": "npm-run-all test:lib test:agent \"test:lib-e2e --ignore-scripts\" test:prompt \"test:lsp-client --ignore-scripts\" lint",
+		"test:agent": "mocha \"agent/src/**/*.test.ts\"",
+		"test:extension": "tsx extension/test/runTest.ts",
+		"test:lib": "mocha \"lib/src/**/*.test.ts\" --exclude \"lib/src/prompt/integration-test/**/*.test.ts\"",
+		"test:lib-e2e": "mocha \"lib/e2e/src/**/*.test.ts\"",
+		"test:lib-e2e-no-ci": "mocha \"lib/e2e/no-ci/**/*.test.ts\"",
+		"test:lib-prompt-e2e": "mocha --delay \"lib/src/prompt/integration-test/prompt.test.ts\"",
+		"test:lib-prompt-e2e-perf": "INCLUDE_PERFORMANCE=true npm run test:lib-prompt-e2e",
+		"test:lsp-client": "mocha \"lsp-client/test/*.test.ts\"",
+		"test:prompt": "npm -C prompt run test",
+		"vscode-dts": "vscode-dts dev && mv vscode.proposed.*.ts extension/src",
+		"vscode:prepublish": "run-s \"build --ignore-scripts\" forbid-sources-content:extension",
+		"vscode:uninstall": "node dist/extensionUninstalled.js",
+		"vsix": "vsce package --allow-missing-repository",
+		"watch": "run-p watch:*",
+		"watch:root": "tsx esbuild.ts --watch",
+		"watch:types": "tsc --noEmit --watch --preserveWatchOutput"
+	},
+	"devDependencies": {
+		"@datadog/datadog-ci": "^2.45.1",
+		"@eslint/eslintrc": "^3.2.0",
+		"@eslint/js": "^9.16.0",
+		"@github/prettier-config": "0.0.6",
+		"@types/crypto-js": "^4.2.2",
+		"@types/diff": "^6.0.0",
+		"@types/git-url-parse": "^9.0.3",
+		"@types/js-yaml": "^4.0.6",
+		"@types/kerberos": "^1.1.2",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "~18.11.0",
+		"@types/semver": "^7.5.8",
+		"@types/sinon": "^17.0.3",
+		"@types/uuid": "^10.0.0",
+		"@types/vscode": "1.82.0",
+		"@types/yargs": "^17.0.24",
+		"@typescript-eslint/eslint-plugin": "^8.17.0",
+		"@typescript-eslint/parser": "^8.17.0",
+		"@vscode/test-electron": "^2.3.8",
+		"@vscode/vsce": "^2.21.0",
+		"benchmark": "^2.1.4",
+		"boxen": "^8.0.1",
+		"chalk": "^5.3.0",
+		"dependency-cruiser": "^16.7.0",
+		"electron": "^28.1.4",
+		"esbuild": "^0.24.0",
+		"esbuild-plugin-copy": "^2.1.1",
+		"esbuild-plugin-summary": "^0.0.2",
+		"eslint": "^9.16.0",
+		"eslint-formatter-visualstudio": "^8.40.0",
+		"eslint-plugin-no-only-tests": "^3.1.0",
+		"fantasticon": "^3.0.0",
+		"glob": "^10.3.4",
+		"globals": "^15.13.0",
+		"js-yaml": "^4.1.0",
+		"mocha": "^10.8.2",
+		"mocha-junit-reporter": "^2.2.1",
+		"mocha-multi-reporters": "^1.5.1",
+		"npm-run-all": "^4.1.5",
+		"pkg": "^5.8.1",
+		"prettier": "^3.4.2",
+		"prettier-plugin-organize-imports": "^4.1.0",
+		"proxy": "^2.1.1",
+		"sinon": "^19.0.2",
+		"ts-dedent": "^2.2.0",
+		"ts-mocha": "^10.0.0",
+		"ts-node": "^10.9.1",
+		"tsconfig-paths": "^4.2.0",
+		"tsx": "^4.19.2",
+		"typed-emitter": "^2.1.0",
+		"typescript": "^5.7.2",
+		"vscode-dts": "^0.3.3"
+	},
+	"dependencies": {
+		"@adobe/helix-fetch": "github:devm33/helix-fetch#1088e599270f36632703f138d88c2100cbe468db",
+		"@github/memoize": "1.1.5",
+		"@microsoft/1ds-post-js": "^4.3.4",
+		"@microsoft/applicationinsights-web-basic": "^3.3.4",
+		"@microsoft/tiktokenizer": "^1.0.9",
+		"@sinclair/typebox": "^0.34.11",
+		"@types/vscode-webview": "^1.57.4",
+		"@vscode/webview-ui-toolkit": "^1.3.1",
+		"crypto-js": "^4.2.0",
+		"diff": "^7.0.0",
+		"dldr": "^0.0.10",
+		"get-stream": "^6.0.1",
+		"git-url-parse": "^16.0.0",
+		"ignore": "^6.0.2",
+		"kerberos": "^2.2.0",
+		"mac-ca": "^3.1.0",
+		"microjob": "^0.7.0",
+		"minimatch": "^9.0.3",
+		"open": "^8.4.2",
+		"semver": "^7.6.3",
+		"shiki": "~1.15.0",
+		"source-map-support": "^0.5.21",
+		"sqlite3": "^5.1.7",
+		"uuid": "^11.0.3",
+		"vscode-languageclient": "^9.0.0",
+		"vscode-languageserver": "^9.0.0",
+		"vscode-languageserver-protocol": "^3.17",
+		"vscode-languageserver-textdocument": "~1.0.11",
+		"vscode-uri": "^3.0.7",
+		"web-tree-sitter": "^0.20.8",
+		"windows-ca-certs": "^0.1.0",
+		"yargs": "^17.7.2"
+	},
+	"overrides": {
+		"fsevents": "<0",
+		"bindings": "npm:bundled-bindings@^1.5.0"
+	},
+	"__metadata": {
+		"id": "23c4aeee-f844-43cd-b53e-1113e483f1a6",
+		"publisherId": "7c1c19cd-78eb-4dfb-8999-99caf7679002",
+		"publisherDisplayName": "GitHub",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1734695092579,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

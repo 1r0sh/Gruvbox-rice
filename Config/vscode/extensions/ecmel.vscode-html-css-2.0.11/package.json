@@ -1,0 +1,154 @@
+{
+	"name": "vscode-html-css",
+	"displayName": "HTML CSS Support",
+	"description": "CSS Intellisense for HTML",
+	"version": "2.0.11",
+	"license": "MIT",
+	"publisher": "ecmel",
+	"author": {
+		"name": "Ecmel Ercan",
+		"url": "https://ecmel.dev/"
+	},
+	"sponsor": {
+		"url": "https://github.com/sponsors/ecmel"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ecmel/vscode-html-css.git"
+	},
+	"bugs": "https://github.com/ecmel/vscode-html-css/issues",
+	"homepage": "https://github.com/ecmel/vscode-html-css",
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"css",
+		"html",
+		"twig",
+		"blade",
+		"django",
+		"nunjucks",
+		"mustache",
+		"angular",
+		"react",
+		"vue",
+		"ejs",
+		"lit",
+		"lit-html",
+		"bootstrap",
+		"template",
+		"javascript",
+		"typescript",
+		"maud",
+		"rust",
+		"multi-root ready"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"contributes": {
+		"configuration": {
+			"title": "CSS Settings",
+			"properties": {
+				"css.enabledLanguages": {
+					"type": "array",
+					"scope": "application",
+					"description": "List of languages which suggestions are desired.",
+					"default": [
+						"html"
+					]
+				},
+				"css.styleSheets": {
+					"type": "array",
+					"scope": "resource",
+					"description": "List of local or remote style sheets for suggestions.",
+					"default": []
+				},
+				"css.autoValidation": {
+					"type": "string",
+					"scope": "resource",
+					"description": "When to validate class selectors.",
+					"default": "Never",
+					"enum": [
+						"Never",
+						"Save",
+						"Always"
+					]
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "vscode-html-css.validate",
+				"title": "CSS: Validate class selectors"
+			},
+			{
+				"command": "vscode-html-css.clear",
+				"title": "CSS: Clear style sheets cache"
+			}
+		]
+	},
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": false
+		},
+		"virtualWorkspaces": true
+	},
+	"main": "./dist/extension.js",
+	"icon": "icon.png",
+	"scripts": {
+		"clean": "git clean -Xdf",
+		"prereset": "npm run clean",
+		"reset": "npm install",
+		"format": "prettier --ignore-path .gitignore -w --list-different .",
+		"debug": "rollup -c --configPlugin typescript -w",
+		"build": "rollup -c --configPlugin typescript --forceExit",
+		"compile": "tsc -p ./ --outDir out --sourceMap true --module commonjs --moduleResolution node",
+		"pretest": "npm run build && npm run compile",
+		"test": "node ./out/test/runTest.js",
+		"coverage": "c8 -n out/src npm run test",
+		"update": "npx npm-check-updates -u -x prettier -x @types/vscode",
+		"vscode:prepublish": "npm run build",
+		"package": "vsce package",
+		"publish": "vsce publish"
+	},
+	"engines": {
+		"vscode": "^1.86.0"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-terser": "^0.4.4",
+		"@rollup/plugin-typescript": "^11.1.6",
+		"@types/line-column": "^1.0.2",
+		"@types/mocha": "^10.0.6",
+		"@types/node": "^20.11.17",
+		"@types/sinon": "^17.0.3",
+		"@types/vscode": "^1.86.0",
+		"@vscode/test-electron": "^2.4.1",
+		"@vscode/vsce": "^2.32.0",
+		"c8": "^9.1.0",
+		"fast-glob": "^3.3.2",
+		"line-column": "^1.0.2",
+		"mocha": "^10.3.0",
+		"prettier": "^2.8.8",
+		"rollup": "^4.22.4",
+		"rollup-plugin-cleandir": "^2.0.0",
+		"sinon": "^17.0.1",
+		"tslib": "^2.6.2",
+		"typescript": "^5.3.3"
+	},
+	"__metadata": {
+		"id": "aaee577c-f062-495a-9816-0cbd442f1d25",
+		"publisherId": "7aa35068-d7c4-4220-b9c1-10360795fd5f",
+		"publisherDisplayName": "ecmel",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1732934104899,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery"
+	}
+}

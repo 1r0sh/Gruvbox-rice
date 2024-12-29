@@ -1,0 +1,89 @@
+{
+	"name": "borderless",
+	"displayName": "VSCode Borderless",
+	"description": "VS Code Extension to set window to borderless on Windows platform.",
+	"version": "1.0.0",
+	"publisher": "vhanla",
+	"license": "MIT",
+	"icon": "images/borderlessicon.png",
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vhanla/vscode-borderless.git"
+	},
+	"bugs": {
+		"url": "https://github.com/vhanla/vscode-borderless/issues",
+		"email": "vhanla@gmail.com"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension",
+	"contributes": {
+		"configuration": {
+			"title": "Window Borderless configuration",
+			"properties": {
+				"borderless.autoenable": {
+					"type": "boolean",
+					"default": false,
+					"description": "Apply borderless on startup"
+				},
+				"borderless.bordertype": {
+					"type": "string",
+					"default": "borderless",
+					"enum": [
+						"borderless",
+						"bordersizable",
+						"bordersimple"
+					],
+					"description": "Type of optional titleless window border"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "borderless.on",
+				"title": "Borderless: Hide Window's Border"
+			},
+			{
+				"command": "borderless.off",
+				"title": "Borderless: Show Window's Border"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "borderless.on",
+				"key": "shift+F11"
+			},
+			{
+				"command": "borderless.off",
+				"key": "shift+F12"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"vscode": "^1.0.0"
+	},
+	"dependencies": {
+		"node-powershell": "^3.1.1"
+	},
+	"__metadata": {
+		"id": "fb9d1835-bc56-4c23-909e-e07ff4285e0b",
+		"publisherId": "a0dc5aa1-49c1-4906-b464-64cda986838d",
+		"publisherDisplayName": "vhanla",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1712185221734,
+		"pinned": false
+	}
+}

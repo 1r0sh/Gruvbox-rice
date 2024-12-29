@@ -1,0 +1,52 @@
+{
+	"name": "simple-light-bw",
+	"displayName": "Simple Black White Theme",
+	"description": "simple bw and wb themes",
+	"version": "0.0.7",
+	"icon": "assets/logo.png",
+	"publisher": "mujdecisy",
+	"engines": {
+		"vscode": "^1.68.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"simple",
+		"light",
+		"dark",
+		"black white",
+		"bw",
+		"wb",
+		"mujdecisy"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mujdecisy/simple-bw-vscode-theme"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "Simple BW Light",
+				"uiTheme": "vs",
+				"path": "./themes/simple-light-color-theme.json"
+			},
+			{
+				"label": "Simple BW Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/simple-dark-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "22172b4e-e712-4c39-ab3b-f31868e15f8a",
+		"publisherId": "0d3524fa-dc26-49ed-8eaa-91aeff5ed14d",
+		"publisherDisplayName": "mujdecisy",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1712223489817,
+		"pinned": false
+	}
+}

@@ -1,0 +1,4 @@
+.DS_Store
+# Only store the @2x ones since that's all we use and the folder is quite large now.
+**/*.png
+!**/*@2x.png

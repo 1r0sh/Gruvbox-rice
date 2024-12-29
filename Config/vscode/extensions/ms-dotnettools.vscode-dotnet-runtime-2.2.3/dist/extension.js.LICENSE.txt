@@ -1,0 +1,30 @@
+/*!
+ * Axios Cache Interceptor 1.6.0
+ * (c) 2021-present Arthur Fiorette & Contributors
+ * Released under the MIT License.
+ */
+
+/*!
+ * NevWare21 Solutions LLC - ts-async, 0.5.2
+ * https://github.com/nevware21/ts-async
+ * Copyright (c) NevWare21 Solutions LLC and contributors. All rights reserved.
+ * Licensed under the MIT license.
+ */
+
+/*!
+ * mime-db
+ * Copyright(c) 2014 Jonathan Ong
+ * Copyright(c) 2015-2022 Douglas Christopher Wilson
+ * MIT Licensed
+ */
+
+/*!
+ * mime-types
+ * Copyright(c) 2014 Jonathan Ong
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */
+
+/*! https://github.com/nevware21/ts-utils v0.11.4 */
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */

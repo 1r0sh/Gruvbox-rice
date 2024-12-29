@@ -1,0 +1,69 @@
+{
+	"name": "pushkin-is-white-theme",
+	"displayName": "Pushkin is White Theme",
+	"description": "The black, dark and white solid themes.",
+	"version": "0.0.7",
+	"publisher": "ispushkin",
+	"engines": {
+		"vscode": "*"
+	},
+	"categories": [
+		"Themes"
+	],
+	"galleryBanner": {
+		"color": "#23201d",
+		"theme": "dark"
+	},
+	"icon": "icon.png",
+	"homepage": "https://github.com/llatigid/Pushkin-is-White-Theme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/llatigid/Pushkin-is-White-Theme.git"
+	},
+	"bugs": {
+		"url": "https://github.com/llatigid/Pushkin-is-White-Theme/issues",
+		"email": "llatigid@gmail.com",
+		"twitter": "@ISPushkin"
+	},
+	"license": "SEE LICENSE IN LICENSE.md",
+	"keywords": [
+		"white",
+		"black",
+		"flat",
+		"theme",
+		"dark",
+		"graphite",
+		"solid",
+		"black and white"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Pushkin is White Theme",
+				"uiTheme": "vs",
+				"path": "./themes/pushkin-is-white-theme.json"
+			},
+			{
+				"label": "Pushkin is Black Theme [beta]",
+				"uiTheme": "vs-dark",
+				"path": "./themes/pushkin-is-black-theme.json"
+			},
+			{
+				"label": "Pushkin is Dark Theme [beta]",
+				"uiTheme": "vs-dark",
+				"path": "./themes/pushkin-is-dark-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "69d0f5f6-0d8e-4b68-bde1-471c06dabbe2",
+		"publisherId": "e4b415b4-06b7-473d-987d-1ec7355de1a4",
+		"publisherDisplayName": "IS. Pushkin",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1712223512067,
+		"pinned": false
+	}
+}
